@@ -1,7 +1,8 @@
-# This is a template repository for python projects
+# This is an example repository to show Factiverse API usage.
 
-To get started: 
-1. Create an environment with python 3.9
-2. Adapted the tests and marker. In `pytest.ini` you find a dummy marker as 
-    example along with a dummy test case using it in `test/test_dummy.py`
-Follow the instructions here to setup the repository https://github.com/factiverse/factiverse-wiki/wiki/Python-style-guide
+## For Factisearch (claim_search)
+1. Fill in the `CLIENT_ID` and `CLIENT_SECRET` in .env
+2. Run the command
+```
+python scripts/factisearch.py
+```
