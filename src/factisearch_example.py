@@ -61,8 +61,8 @@ def factisearch(query: str, access_token: str, lang: str="en") -> requests.Respo
     return response
         
 if __name__ == '__main__':
-    client_id = os.getenv("CLIENT_ID")
-    client_secret = os.getenv("CLIENT_SECRET")
+    client_id = os.getenv("CLIENT_ID") # Fill in this value in .env
+    client_secret = os.getenv("CLIENT_SECRET") # Fill in this value in .env
     access_token = get_access_token(client_id, client_secret, token_url)
     response = factisearch("Earth is not flat", access_token)
     if response.status_code == 200:
