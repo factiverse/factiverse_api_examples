@@ -4,5 +4,5 @@
 1. Fill in the `CLIENT_ID` and `CLIENT_SECRET` in .env
 2. Run the command
 ```
-python scripts/factisearch.py
+python -m src.factisearch_example
 ```
