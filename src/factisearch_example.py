@@ -3,12 +3,11 @@ import json
 import os
 from typing import Dict, List
 
-import dotenv
+from dotenv import load_dotenv
 import requests
 
 api_endpoint = "https://api.factiverse.ai/v1/claim_search"
 token_url = "https://auth.factiverse.ai/oauth/token"
-dotenv.load_dotenv()
 
 def get_access_token(client_id: str, client_secret: str, token_url: str) -> str:
     """Get access token from Factiverse API.
@@ -28,6 +27,7 @@ def get_access_token(client_id: str, client_secret: str, token_url: str) -> str:
         "grant_type": "client_credentials",
         "client_id": client_id,
         "client_secret": client_secret,
+        "audience": "https://factiverse/api"
     }
     response = requests.post(token_url, data=payload)
     if response.status_code == 200:
@@ -61,10 +61,11 @@ def factisearch(query: str, access_token: str, lang: str="en") -> requests.Respo
     return response
         
 if __name__ == '__main__':
+    load_dotenv()
     client_id = os.getenv("CLIENT_ID") # Fill in this value in .env
     client_secret = os.getenv("CLIENT_SECRET") # Fill in this value in .env
     access_token = get_access_token(client_id, client_secret, token_url)
-    response = factisearch("Earth is not flat", access_token)
+    response = factisearch("COVID vaccine caused Kate Middleton's cancer.", access_token)
     if response.status_code == 200:
     # Successful request
         data = response.json() 
