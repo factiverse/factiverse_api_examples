@@ -47,7 +47,7 @@ payload_json = '{
 ### Set Up Environment
 1. **Install Python and Required Libraries**:
    ```bash
-   pip install requests
+   pip install requests python-dotnev
    ```
 
 2. **Import Libraries**:
@@ -114,4 +114,16 @@ payload_json = '{
        print("Error:", response.status_code, response.text)
    ```
 
+## This repository provides a python example.
+
+1.  **Install Python and Required Libraries**:
+   ```bash
+   pip install requests python-dotnev
+   ```
+
+2. **Fill in `CLIENT_ID` and `CLIENT_SECRET` you got from Factiverse in .env**
+3. **Run the python script:**
+   ```bash
+   python -m src.factisearch_example
+   ```
 
