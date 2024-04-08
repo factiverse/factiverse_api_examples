@@ -14,7 +14,7 @@ For comprehensive information on the Factiverse API, visit:
 ### Obtaining an Access Token
 ```bash
 curl --request POST \
-  --url https://factiverse-auth.eu.auth0.com/oauth/token \
+  --url https://auth.factiverse.ai/oauth/token \
   --header 'content-type: application/json' \
   --data '{"client_id":"YOUR_CLIENT_ID","client_secret":"YOUR_CLIENT_SECRET","audience":"https://factiverse/api","grant_type":"client_credentials"}'
 ```
