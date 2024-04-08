@@ -70,6 +70,7 @@ payload_json = '{
        payload = {
            "grant_type": "client_credentials",
            "client_id": client_id,
+           "size": 10,
            "client_secret": client_secret,
        }
        response = requests.post(token_url, data=payload)
