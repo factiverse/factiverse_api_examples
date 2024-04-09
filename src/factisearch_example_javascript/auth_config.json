@@ -1,0 +1,5 @@
+{
+  "domain": "{yourDomain}",
+  "clientId": "{yourClientId}",
+  "scope": "openid profile email post:claim_search"
+}
