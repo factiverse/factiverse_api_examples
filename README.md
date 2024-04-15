@@ -1,24 +1,26 @@
 # Factiverse API Documentation
 
 ## Obtaining Credentials
+
 To access Factiverse APIs, you need to acquire a `client_id` and a `client_secret`. These can be obtained along with pricing information by contacting the Factiverse sales team.
 
 **Contact**: info@factiverse.ai
 
 ## Detailed API Documentation
+
 For comprehensive information on the Factiverse API, visit:
 [Factiverse API Documentation](https://api.factiverse.ai/v1/redoc)
 
-
 ## Accessing APIs via Curl
+
 ### Obtaining an Access Token
+
 ```bash
 curl --request POST \
   --url https://auth.factiverse.ai/oauth/token \
   --header 'content-type: application/json' \
   --data '{"client_id":"YOUR_CLIENT_ID","client_secret":"YOUR_CLIENT_SECRET","audience":"https://factiverse/api","grant_type":"client_credentials"}'
 ```
-
 
 ### Using the Access Token
 
@@ -29,9 +31,10 @@ curl -X POST [api_endpoint] \
 -H "Authorization: Bearer [YOUR_ACCESS_TOKEN]" \
 -d 'payload_json'
 ```
+
 Note: Replace [api_endpoint] and ‘payload_json’ as per your requirements.
 
-Fill the api_endpoint. For example, for factisearch (claim_search) it is https://api.factiverse.ai/v1/claim_search 
+Fill the api_endpoint. For example, for factisearch (claim_search) it is https://api.factiverse.ai/v1/claim_search
 And fill the payload_json for the selected endpoint. For example, for claim_search
 
 ```
@@ -42,21 +45,25 @@ payload_json = '{
 }'
 ```
 
-
 ## Accessing APIs using Python
+
 ### Set Up Environment
+
 1. **Install Python and Required Libraries**:
+
    ```bash
    pip install requests python-dotnev
    ```
 
 2. **Import Libraries**:
+
    ```python
    import requests
    import json
    ```
 
 3. **Define API Endpoint and Credentials**:
+
    ```python
    api_endpoint = "https://api.factiverse.no/v1/claim_search"
    token_url = "https://auth.factiverse.ai/authorize"  # Replace if different
@@ -65,6 +72,7 @@ payload_json = '{
    ```
 
 4. **Obtain Access Token**:
+
    ```python
    def get_access_token(client_id, client_secret, token_url):
        payload = {
@@ -83,6 +91,7 @@ payload_json = '{
    ```
 
 5. **Create Request Headers**:
+
    ```python
    headers = {
        "Content-Type": "application/json",
@@ -91,6 +100,7 @@ payload_json = '{
    ```
 
 6. **Define the Payload for claim_search**:
+
    ```python
    payload = {
        "query": "The earth is not flat",  # Your search query
@@ -100,6 +110,7 @@ payload_json = '{
    ```
 
 7. **Make the Request**:
+
    ```python
    response = requests.post(api_endpoint, headers=headers, json=payload)
    ```
@@ -118,9 +129,10 @@ payload_json = '{
 ## This repository provides a python example.
 
 1.  **Install Python and Required Libraries**:
-   ```bash
-   pip install requests python-dotnev
-   ```
+
+```bash
+pip install requests python-dotnev
+```
 
 2. **Fill in `CLIENT_ID` and `CLIENT_SECRET` you got from Factiverse in .env**
 3. **Run the python script:**
@@ -128,3 +140,16 @@ payload_json = '{
    python -m src.factisearch_example
    ```
 
+## Accessing APIs using Javascript
+
+1. Open the folder `src/factisearch_example_javascript`
+
+2. Add your domain and client ID in auth_config.json.
+
+3. Run `npm install` to install all dependencies.
+
+4. Run `npm start` to start the development server.
+
+5. Navigate to `localhost:4000` for a demo login.
+
+You can also follow the steps in this Auth0 tutorial: https://auth0.com/docs/quickstart/spa/vanillajs/01-login
