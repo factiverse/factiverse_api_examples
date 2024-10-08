@@ -40,11 +40,29 @@ And fill the payload_json for the selected endpoint. For example, for claim_sear
 ```
 payload_json = '{
     "query": "The earth is not flat",
-    "lang": "en",
-    "searchEngine": ["fact_search_elasticsearch"]
+    "lang": "en"
 }'
 ```
+Here is the full example factisearch or for `claim_search`:
+```
+curl -X POST https://api.factiverse.ai/v1/claim_search \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer [YOUR_ACCESS_TOKEN]" \
+-d '{ 
+    "query": "The earth is not flat", 
+    "lang": "en"
+}'
+```
+Example for fact-checking or `stance_detection` endpoint:
 
+```
+curl -X POST https://api.factiverse.ai/v1/stance_detection \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer [YOUR_ACCESS_TOKEN]" \
+-d '{ 
+    "claim": "The earth is not flat"
+}'
+```
 ## Accessing APIs using Python
 
 ### Set Up Environment
