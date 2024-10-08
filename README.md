@@ -65,7 +65,7 @@ payload_json = '{
 3. **Define API Endpoint and Credentials**:
 
    ```python
-   api_endpoint = "https://api.factiverse.no/v1/claim_search"
+   api_endpoint = "https://api.factiverse.ai/v1/claim_search"
    token_url = "https://auth.factiverse.ai/authorize"  # Replace if different
    client_id = "your_client_id"  # Replace with your client ID
    client_secret = "your_client_secret"  # Replace with your client secret
